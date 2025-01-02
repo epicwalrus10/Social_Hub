@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Alex's Social Hub</title>
+  <!-- Link to external CSS -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Header with nav -->
+  <header class="header">
+    <div class="header__logo">
+      <h1>Alex's Social Hub</h1>
+    </div>
+    <nav class="nav" aria-label="Main Navigation">
+      <ul class="nav__list">
+        <li class="nav__item">
+          <a href="#" class="nav__link">Social</a>
+          <!-- Dropdown -->
+          <ul class="nav__dropdown">
+            <li>
+              <a href="https://x.com/epicwalrus10" class="nav__dropdown-link" target="_blank" rel="noopener noreferrer">
+                X (Twitter)
+              </a>
+            </li>
+            <li>
+              <a href="https://github.com/epicwalrus10" class="nav__dropdown-link" target="_blank" rel="noopener noreferrer">
+                GitHub
+              </a>
+            </li>
+            <li>
+              <a href="your-linkedin-link.com" class="nav__dropdown-link" target="_blank" rel="noopener noreferrer">
+                LinkedIn
+              </a>
+            </li>
+          </ul>
+        </li>
+        <!-- Add more top-level navigation items if needed -->
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Main content area -->
+  <main class="content">
+    <section class="featured-content">
+      <h2 class="featured-content__title">Featured Content</h2>
+
+      <!-- Example video card #1 -->
+      <article 
+        class="video-card" 
+        data-link="https://youtu.be/RoNRylVU_hs" 
+        aria-label="Going Hard With The Bow in Hunt Showdown"
+      >
+        <img 
+          class="video-card__image" 
+          src="" 
+          alt="Thumbnail for Going Hard With The Bow" 
+        />
+        <div class="video-card__content">
+          <h3 class="video-card__title">Going Hard With The Bow</h3>
+          <p class="video-card__description">
+            Killing a couple fools with the bow in Hunt Showdown.
+          </p>
+          <a 
+            class="video-card__link" 
+            href="https://youtu.be/RoNRylVU_hs" 
+            target="_blank" 
+            rel="noopener noreferrer"
+          >
+            Watch Now
+          </a>
+        </div>
+      </article>
+
+      <!-- Example video card #2 -->
+      <article 
+        class="video-card" 
+        data-link="https://www.youtube.com/watch?v=tcRmBQKjNTM" 
+        aria-label="Man Goes Beatmode"
+      >
+        <img 
+          class="video-card__image" 
+          src="" 
+          alt="Thumbnail for Title of Popular Content 2"
+        />
+        <div class="video-card__content">
+          <h3 class="video-card__title">Man Goes Beastmode</h3>
+          <p class="video-card__description">
+            Man goes HAM.
+          </p>
+          <a 
+            class="video-card__link" 
+            href="https://www.youtube.com/watch?v=tcRmBQKjNTM" 
+            target="_blank" 
+            rel="noopener noreferrer"
+          >
+            Watch Now
+          </a>
+        </div>
+      </article>
+
+      <!-- Example video card #3 -->
+      <article
+        class="video-card"
+        data-link="https://www.youtube.com/watch?v=h3lkXrvXUAY"
+        aria-label="Levering Go Hard"
+      >
+        <img
+          class="video-card__image"
+          src=""
+          alt="Levering Go Hard"
+        />
+        <div class="video-card__content">
+          <h3 class="video-card__title">Levering Go Hard</h3>
+          <p class="video-card__description">
+            Alex levers a mofo.
+          </p>
+          <a
+            class="video-card__link"
+            href="https://www.youtube.com/watch?v=h3lkXrvXUAY"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Watch Now
+          </a>
+        </div>
+      </article>
+
+    </section>
+  </main>
+
+  <!-- Include external JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>
