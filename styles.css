@@ -9,69 +9,107 @@
 
 /* Body Styles */
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  background-color: #5c56ac;
-  color: #000080;
+  font-family: 'Roboto', sans-serif; /* Updated to use Google Fonts */
+  background-color: #46638d; /* Softer background color for better contrast */
+  color: #333333; /* Darker text for readability */
   line-height: 1.6;
 }
 
-/* Header */
+/* 
+  HEADER
+  -------
+  Full-width background with a centered container using CSS Grid.
+*/
 .header {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  background-color: #ffffff;
-  padding: 10px 20px;
+  background-color: #b8b7a2;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   z-index: 1000;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  padding: 15px 0; /* Increased padding for better spacing */
 }
 
-.header__logo h1 {
-  font-size: 1.5rem;
-  font-weight: 500;
-  margin: 0;
+/* Centered container within the header */
+.header__container {
+  max-width: 1200px;        /* Updated to match .content's width */
+  margin: 0 auto;           /* Center horizontally */
+  padding: 0 20px;          /* Side padding */
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;      /* Vertically center items */
+  gap: 20px;                /* Space between columns */
+}
+
+/* Left Column: Icon */
+.header__left {
+  display: flex;
+  align-items: center;
+}
+
+/* Icon in the header */
+.header__logo-icon {
+  width: 50px;              /* Reduced icon size for better balance */
+  height: 50px;
+  margin-right: 10px;       /* Space between icon and title */
+}
+
+/* Center Column: Title */
+.header__title {
+  text-align: center;
+  font-size: 1.8rem;        /* Increased font size for prominence */
+  font-weight: 700;         /* Bolder font for emphasis */
+  color: #333333;           /* Darker color for readability */
+}
+
+/* Right Column: Navigation */
+.header__right {
+  /* Navigation styles are handled below */
 }
 
 /* Navigation */
 .nav {
-  margin-top: 10px;
+  /* Center the navigation vertically */
 }
 
 .nav__list {
   list-style: none;
   display: flex;
+  align-items: center;
 }
 
+/* Navigation Items */
 .nav__item {
   position: relative;
+  margin-left: 20px;        /* Spacing between navigation links */
 }
 
 .nav__link {
   text-decoration: none;
-  color: #000080;
-  padding: 10px 15px;
-  display: block;
+  color: #333333;            /* Darker color for better contrast */
+  padding: 8px 12px;
+  font-weight: 500;
+  border-radius: 4px;
   transition: background-color 0.3s, color 0.3s;
 }
 
 .nav__link:hover {
-  background-color: #e6e6ff;
-  color: #0000ff;
+  background-color: #e0e0e0; /* Light gray background on hover */
+  color: #0000ff;            /* Blue text on hover */
 }
 
-/* Dropdown */
+/* Dropdown Menu */
 .nav__dropdown {
   display: none;
   position: absolute;
-  background-color: #fff;
-  min-width: 150px;
-  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
   top: 100%;
   left: 0;
+  background-color: #ffffff;
+  min-width: 160px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  border-radius: 4px;
+  z-index: 1001;
 }
 
 .nav__item:hover .nav__dropdown {
@@ -82,26 +120,26 @@ body {
   display: block;
   padding: 10px 15px;
   text-decoration: none;
-  color: #000080;
+  color: #333333;
   transition: background-color 0.3s, color 0.3s;
 }
 
 .nav__dropdown-link:hover {
-  background-color: #e6e6ff;
+  background-color: #f0f0f0;
   color: #0000ff;
 }
 
 /* Main Content */
 .content {
-  padding: 100px 20px 20px; /* Padding for fixed header */
-  max-width: 1200px; /* Set a maximum width */
-  margin: 0 auto; /* Center the content horizontally */
+  padding: 100px 20px 20px; /* Adjusted padding for fixed header */
+  max-width: 1200px;          /* Set a maximum width */
+  margin: 0 auto;             /* Center the content horizontally */
 }
 
 /* Featured Content */
 .featured-content {
-  max-width: 800px; /* Set a maximum width for centering */
-  margin: 0 auto; /* Horizontally center on wide screens */
+  max-width: 800px;           /* Set a maximum width for centering */
+  margin: auto;             /* Horizontally center on wide screens */
   padding: 20px 0;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -111,36 +149,34 @@ body {
 .featured-content__title {
   grid-column: 1 / -1;
   text-align: center;
-  color: #ffffff;
-  font-weight: 600;
-  margin-bottom: 20px;
+  color: #333333;             /* Updated color for better contrast */
+  font-size: 2rem;            /* Increased font size */
+  font-weight: 700;
+  margin-bottom: 30px;        /* Increased margin for spacing */
+  background-color: #e0e0e0;
 }
 
 /* Video Card */
 .video-card {
-  background-color: #fff;
-  border-radius: 12px;
+  background-color: #ffffff;
+  border-radius: 8px;          /* Slightly reduced border radius for a sleek look */
   overflow: hidden;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   display: flex;
   flex-direction: column;
 }
 
 .video-card:hover {
-  transform: translateY(-10px) scale(1.03);
-  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.1);
+  transform: translateY(-5px) scale(1.02); /* Subtle lift on hover */
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
   z-index: 2;
 }
 
 .video-card__image {
   width: 100%;
-  height: 200px;
+  height: 180px;               /* Reduced height for better balance */
   object-fit: cover;
-  border-top-left-radius: 12px;
-  border-top-right-radius: 12px;
 }
 
 .video-card__content {
@@ -151,49 +187,171 @@ body {
 }
 
 .video-card__title {
-  margin-bottom: 10px;
-  font-size: 1.125rem;
-  color: #000080;
+  margin-bottom: 8px;
+  font-size: 1.25rem;
+  color: #333333;
+  font-weight: 600;
 }
 
 .video-card__description {
-  font-size: 0.875rem;
-  color: #666;
-  line-height: 1.4;
+  font-size: 0.95rem;
+  color: #666666;
+  line-height: 1.5;
+  margin-bottom: 15px;
 }
 
 .video-card__link {
-  margin-top: auto;
-  color: #000080;
+  align-self: flex-start;
+  color: #ffffff;
+  background-color: #0000ff;
+  padding: 8px 16px;
   text-decoration: none;
-  font-weight: 500;
-  transition: color 0.3s;
+  border-radius: 4px;
+  transition: background-color 0.3s;
 }
 
 .video-card__link:hover {
-  color: #0000ff;
+  background-color: #3333ff;
 }
 
 /* Media Queries for Responsiveness */
+@media (max-width: 1200px) {
+  .header__container {
+    max-width: 1000px;         /* Adjust container width on medium screens */
+  }
+}
+
 @media (max-width: 768px) {
-  .content {
-    max-width: 100%; /* Use full width on smaller screens */
-    padding: 80px 10px 10px;
+  .header__container {
+    grid-template-columns: 1fr auto; /* Adjust grid for smaller screens */
+    align-items: center;
   }
-  .featured-content {
-    max-width: 100%; /* Adjust grid to fit smaller screens */
-    gap: 15px; /* Reduce spacing between cards */
+
+  .header__title {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
   }
-  .video-card__image {
-    height: 150px; /* Reduce thumbnail height */
+
+  .header__left, .header__right {
+    flex: 1;
+  }
+
+  .header__left {
+    justify-content: flex-start;
+  }
+
+  .header__right {
+    justify-content: flex-end;
+  }
+
+  /* Hamburger Menu for Mobile */
+  .nav__list {
+    display: none;
+    flex-direction: column;
+    background-color: #ffffff;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    width: 200px;
+    border-radius: 4px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  }
+
+  .nav__item {
+    margin: 0;
+  }
+
+  .nav__dropdown {
+    position: static;
+    box-shadow: none;
+  }
+
+  .nav__dropdown-link {
+    padding: 12px 20px;
+  }
+
+  .nav__link {
+    padding: 12px 20px;
+    width: 100%;
+  }
+
+  /* Show Hamburger Icon */
+  .nav::before {
+    content: "\2630"; /* Unicode for hamburger icon */
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: block;
+  }
+
+  .nav.open .nav__list {
+    display: flex;
   }
 }
 
 @media (max-width: 480px) {
-  .featured-content {
-    grid-template-columns: 1fr; /* Stack cards on very small screens */
+  .header__logo-icon {
+    width: 40px;
+    height: 40px;
   }
+
+  .header__title {
+    font-size: 1.3rem;
+  }
+
+  .featured-content__title {
+    font-size: 1.8rem;
+  }
+
   .video-card__image {
-    height: 120px; /* Further reduce thumbnail height */
+    height: 150px;
   }
+
+  .video-card__link {
+    padding: 6px 12px;
+    font-size: 0.9rem;
+  }
+}
+
+/* Expanded Video Card */
+.video-card.expanded {
+  grid-column: 1 / -1; /* Make the expanded video card take full width */
+  position: relative;
+  z-index: 10;
+  max-height: 600px;
+  transition: all 0.4s ease; /* Smooth transition for expansion */
+}
+
+/* Adjust iframe height in expanded state */
+.video-player-content {
+  position: relative;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 100%;
+  max-height: 80%;
+}
+
+.video-player-iframe {
+  width: 100%;
+  height: 400px; /* Adjusted height for better balance */
+  border-radius: 8px;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 1.5rem;
+  color: #ffffff;
+  background-color: rgba(0, 0, 0, 0.6);
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: background-color 0.3s;
+}
+
+.close-btn:hover {
+  background-color: rgba(0, 0, 0, 0.8);
 }
